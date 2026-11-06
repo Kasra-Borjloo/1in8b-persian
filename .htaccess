@@ -1,11 +1,25 @@
 RewriteEngine On
 RewriteBase /
 
-# Handle API routes via PHP backend
+# 1. API routing to PHP backend
 RewriteCond %{REQUEST_URI} ^/api/ [NC]
 RewriteRule ^api/(.*)$ api/index.php [QSA,L]
 
-# For subpages like /fa/about/ or /fa/edu/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+# 2. Redirect /about/ to /fa/about/ etc. if visited without /fa/ prefix
+RewriteRule ^about/?$ /fa/about/ [R=301,L]
+RewriteRule ^c/?$ /fa/c/ [R=301,L]
+RewriteRule ^story/?$ /fa/story/ [R=301,L]
+RewriteRule ^edu/?$ /fa/edu/ [R=301,L]
+RewriteRule ^privacy/?$ /fa/privacy/ [R=301,L]
+RewriteRule ^terms/?$ /fa/terms/ [R=301,L]
+RewriteRule ^help/?$ /fa/help/ [R=301,L]
+RewriteRule ^c/(.*)$ /fa/c/$1 [R=301,L]
+RewriteRule ^story/(.*)$ /fa/story/$1 [R=301,L]
+
+# 3. Serve physical files/directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 4. Fallback for SPA routing
+RewriteRule ^ /index.html [L]
