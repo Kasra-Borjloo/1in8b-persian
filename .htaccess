@@ -1,3 +1,6 @@
+# Prevent Directory Indexing and redirect /fa/ to root /
+Options -Indexes
+
 RewriteEngine On
 RewriteBase /
 
@@ -5,7 +8,16 @@ RewriteBase /
 RewriteCond %{REQUEST_URI} ^/api/ [NC]
 RewriteRule ^api/(.*)$ api/index.php [QSA,L]
 
-# 2. Redirect /about/ to /fa/about/ etc. if visited without /fa/ prefix
+# 2. Redirect /fa/ or /fa to /
+RewriteRule ^fa/?$ / [R=301,L]
+
+# 3. Redirect english/other language roots
+RewriteRule ^en/?$ / [R=301,L]
+RewriteRule ^ko/?$ / [R=301,L]
+RewriteRule ^ja/?$ / [R=301,L]
+RewriteRule ^zh/?$ / [R=301,L]
+
+# 4. Redirect aliases without /fa/ prefix to /fa/...
 RewriteRule ^about/?$ /fa/about/ [R=301,L]
 RewriteRule ^c/?$ /fa/c/ [R=301,L]
 RewriteRule ^story/?$ /fa/story/ [R=301,L]
@@ -16,10 +28,10 @@ RewriteRule ^help/?$ /fa/help/ [R=301,L]
 RewriteRule ^c/(.*)$ /fa/c/$1 [R=301,L]
 RewriteRule ^story/(.*)$ /fa/story/$1 [R=301,L]
 
-# 3. Serve physical files/directories directly
+# 5. Serve physical files/directories if they exist
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# 4. Fallback for SPA routing
+# 6. Fallback for SPA routing to main index.html
 RewriteRule ^ /index.html [L]
