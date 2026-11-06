@@ -1,55 +1,64 @@
-# یک در هشت میلیارد (1 in 8 Billion) - نسخه فارسی و آفلاین
+# 1 in 8 Billion (Persian Edition) - یک در هشت میلیارد
 
-شبیه‌سازی کامل و آماری زندگی انسان‌ها بر پایه داده‌های واقعی ۱۷۲ کشور و منطقه جهان، ترجمه شده به زبان فارسی سلیس و روان همراه با فونت زیبای **وزیرمتن (Vazirmatn)**.
-
----
-
-## 🌟 ویژگی‌های نسخه فارسی
-
-- **کاملاً فارسی و روان**: تمام منوها، سناریوهای زندگی، گزینه‌ها، دیالوگ‌ها، اسامی کاراکترها و رویدادهای تاریخی به زبان فارسی سلیس ترجمه شده‌اند.
-- **اجرای ۱۰۰٪ آفلاین و لوکال**: تمامی استایل‌ها، اسکریپت‌ها، پایگاه داده‌های جمعیتی، مانیفست‌ها و فونت‌ها به صورت محلی ذخیره شده و بدون نیاز به اینترنت اجرا می‌شوند.
-- **تایپوگرافی زیبا با فونت وزیرمتن**: پشتیبانی پیش‌فرض از فونت استاندارد Vazirmatn در تمام صفحات، دکمه‌ها و شبیه‌ساز با جهت راست‌چین (RTL).
-- **رایگان‌سازی تمامی امکانات ویژه**: بخش‌های مربوط به پرداخت دلاری و خرید بلیت‌های نگهداری یادبودها، دکوراسیون دهکده و بسته‌ها همگی آزاد و رایگان شده‌اند.
-- **بومی‌سازی خطوط مشاوره و اورژانس**: شماره‌های اضطراری در بخش راهنمای بحران با خطوط مشاوره و اورژانس اجتماعی بومی جایگزین شده‌اند.
+> **The fully interactive, complete, and live version is available online at:**  
+> ### 🌐 [https://www.kasraborjloo.xyz/](https://www.kasraborjloo.xyz/)
 
 ---
 
-## 🚀 نحوه اجرا به صورت لوکال
+## 📖 About The Project
 
-برای اجرای پروژه روی سیستم خود به سادگی می‌توانید از هر وب‌سرور لوکال استفاده کنید. برای مثال:
+This is a complete, fluent Persian localization and self-contained offline implementation of the renowned life simulation project **"1 in 8 Billion" (1in8b.life)**.
 
-### با استفاده از پایتون (Python):
+The simulation accurately models human lifespans, births, historical events, relations, education, and careers across **172 countries and territories** based on official data from the United Nations, World Bank, WHO, and UNICEF.
+
+[راهنمای فارسی (Persian Documentation)](./README_FA.md)
+
+---
+
+## 🌟 Key Features
+
+- **100% Fluent Persian Translation**: All events, decisions, scenarios, dialogues, character names, and UI elements are translated into natural Persian.
+- **Vazirmatn Typography**: Integrated with the standard, elegant [Vazirmatn](https://github.com/rastikerdar/vazirmatn) Persian font for clear readability across all devices.
+- **Unlocked Special Features**: Free access to all previously paid passes, memorials, village decorations, and custom packs.
+- **Offline & Self-Contained**: Can be launched locally without third-party tracking, external CDNs, or remote dependencies.
+- **Integrated Backend**: Includes a lightweight backend (`api/index.php`) and `.htaccess` rewrite rules to handle memorial and village endpoints smoothly.
+
+---
+
+## 🚀 Running Locally
+
+To run the local version on your machine:
+
+### Option 1: Python HTTP Server (Quick & Lightweight)
+Open your terminal inside this repository folder and run:
 ```bash
-# در پوشه پروژه دستور زیر را وارد کنید:
 python -m http.server 8080
 ```
-سپس مرورگر خود را باز کرده و به آدرس زیر بروید:
-`http://localhost:8080`
+Then visit: [http://localhost:8080](http://localhost:8080)
 
-### با استفاده از Node.js:
+### Option 2: Node.js Serve
 ```bash
 npx serve .
 ```
 
-یا با استفاده از افزونه‌های محبوبی مثل **Live Server** در VS Code با یک کلیک فایل `index.html` را اجرا کنید.
+### Option 3: VS Code Live Server
+Right-click on `index.html` and click **"Open with Live Server"**.
 
 ---
 
-## 📂 ساختار فایل‌ها
+## 📂 Repository Structure
 
-- `index.html`: صفحه اصلی و رابط اجرای شبیه‌ساز زندگی
-- `a/`: استایل‌ها (`s.8ae98c5408.css`) و موتور محاسباتی فارسی شبیه‌ساز (`fa.b72de6b259.js`)
-- `fonts/`: بسته‌های وب‌فونت و فونت وزیرمتن
-- `fa/`: صفحات فرعی تکمیلی شامل:
-  - `fa/about/`: درباره بازی و داده‌های آماری
-  - `fa/edu/`: راهنمای استفاده برای کلاس‌های درس و معلمان
-  - `fa/c/`: آمار و جداول تفصیلی ۱۷۲ کشور جهان
-  - `fa/story/`: داستان چگونگی توسعه پروژه
-  - `fa/privacy/`: سیاست حفظ حریم خصوصی
-  - `fa/terms/`: قوانین و مقررات
+- `index.html`: Main interactive life simulation application
+- `a/`: Core stylesheet and localized Persian game engine (`fa.b72de6b259.js`)
+- `fonts/`: Self-hosted fonts, including Vazirmatn webfonts
+- `fa/`: Subpages (About, Educational guides for teachers, 172 detailed country statistics, and story books)
+- `api/`: Lightweight PHP backend providing data endpoints and simulated token features
+- `.htaccess`: Server configuration, clean URL rewriting, and directory indexing protections
 
 ---
 
-## 👤 توسعه‌دهنده و مترجم
-- **کسری برجلو (Kasra Borjloo)**
-- مخزن گیت‌هاب: [Kasra-Borjloo/1in8b-persian](https://github.com/Kasra-Borjloo/1in8b-persian)
+## 👤 Author & Maintainer
+
+- **Kasra Borjloo**
+- **Live Website**: [https://www.kasraborjloo.xyz/](https://www.kasraborjloo.xyz/)
+- **GitHub**: [@Kasra-Borjloo](https://github.com/Kasra-Borjloo)
