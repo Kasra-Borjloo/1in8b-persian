@@ -42,10 +42,3 @@ python -m http.server 8080
 ```bash
 npx serve .
 ```
-
----
-
-## 👤 توسعه‌دهنده
-- **کسری برجلو (Kasra Borjloo)**
-- وب‌سایت آنلاین: [https://www.kasraborjloo.xyz/](https://www.kasraborjloo.xyz/)
-- گیت‌هاب: [@Kasra-Borjloo](https://github.com/Kasra-Borjloo)
